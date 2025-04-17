@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gucci</title>
+    <link
+      rel="icon"
+      href="https://i.pinimg.com/474x/23/f4/3e/23f43e6b5d84ce7dd3cb8ac67f589ad2.jpg"
+    />
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
       * {
         font-family: "Outfit", sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
 
       body {
-        margin: 0px;
         background-color: rgb(65, 99, 131);
       }
 
@@ -22,24 +28,72 @@
         margin-inline: auto;
       }
 
+      /* Navbar styling */
       nav {
-        padding-block: 30px;
-        text-align: center;
-        color: white;
-        font-weight: bold;
         background-color: rgb(96, 133, 168);
+        padding: 20px 0;
       }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        color: white;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease-in-out;
+      }
+
+      .nav-links a:hover {
+        color: #ffe600;
+      }
+
+      /* Dropdown */
+      .dropdown {
+        position: relative;
+      }
+
+       .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: rgb(96, 133, 168);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 10px 0;
+      }
+
+       .dropdown-content a {
+        display: block;
+        padding: 10px 20px;
+        white-space: nowrap;
+       }
 
       .flex-container {
         display: flex;
         gap: 20px;
         margin-block: 50px;
+        flex-wrap: wrap;
       }
 
       .flex-item {
-        box-sizing: border-box;
-        /* max-width: 350px; */
         background-color: white;
+        flex: 1 1 calc(25% - 20px);
+        min-width: 250px;
       }
 
       .content {
@@ -57,6 +111,10 @@
         transition: all 0.3s ease-in-out;
       }
 
+      .content > .btn:hover {
+        background-color: #dcdcdc;
+      }
+
       footer {
         padding-block: 150px;
         text-align: center;
@@ -64,25 +122,26 @@
         font-weight: bold;
         background-color: rgb(96, 133, 168);
       }
-
+     .footer-bottom {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 10px;
+        font-size: 14px;
+        border-top: 2px solid rgba(255, 255, 255, 0.3);
+     }
+    
       @media (max-width: 1000px) {
-        /* body {
-          background-color: aqua;
-        } */
-
-        .flex-container {
-          flex-wrap: wrap;
-        }
-
         .flex-item {
           flex-basis: calc(50% - 10px);
         }
       }
 
       @media (max-width: 600px) {
-        /* body {
-          background-color: rgb(187, 255, 0);
-        } */
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+        }
 
         .flex-item {
           flex-basis: 100%;
@@ -91,10 +150,30 @@
     </style>
   </head>
   <body>
-    <nav>Navbar</nav>
-    <h1 class="max-wrapper">GUCCI BAG</h1>
+    <nav>
+      <div class="navbar max-wrapper">
+        <div class="logo">GUCCI BAG</div>
+        <div class="nav-links">
+          <a href="">Home</a>
+          <div class="dropdown">
+            <a href="">Collections ▾</a>
+            <div class="dropdown-content">
+              <a href="#marmont">Marmont</a>
+              <a href="#mint">Mint</a>
+              <a href="#crossbody">Crossbody</a>
+              <a href="#pouch">Pouch</a>
+            </div>
+          </div>
+          <a href="">About</a>
+          <a href="">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="max-wrapper" style="color: white; margin-block: 30px">GUCCI BAG</h1>
+
     <main class="flex-container max-wrapper">
-      <section class="flex-item">
+      <section class="flex-item" id="marmont">
         <img
           src="https://media.gucci.com/style/DarkGray_Center_0_0_316x316/1652979603/446744_DTDFV_1000_001_055_0000_Light.jpg"
           alt="gucci"
@@ -109,7 +188,7 @@
           <button class="btn">Read More</button>
         </article>
       </section>
-      <section class="flex-item">
+      <section class="flex-item" id="mint">
         <img
           src="https://5.imimg.com/data5/SELLER/Default/2023/11/363761180/WF/JQ/HB/188692646/df3bcd90-7e60-4308-9977-d46f338349d5-500x500.webp"
           alt="gucci"
@@ -124,7 +203,7 @@
           <button class="btn">Read More</button>
         </article>
       </section>
-      <section class="flex-item">
+      <section class="flex-item" id="crossbody">
         <img
           src="https://media.gucci.com/style/DarkGray_Center_0_0_316x316/1683218723/752591_FACFW_8920_001_095_0000_Light.jpg"
           alt="gucci"
@@ -139,7 +218,7 @@
           <button class="btn">Read More</button>
         </article>
       </section>
-      <section class="flex-item">
+      <section class="flex-item" id="pouch">
         <img
           src="https://media.gucci.com/style/DarkGray_Center_0_0_316x316/1716914861/795467_96IWT_8745_001_074_0000_Light.jpg"
           alt="gucci"
@@ -155,6 +234,21 @@
         </article>
       </section>
     </main>
-    <footer>Footer</footer>
+
+    <footer>
+      <div class="footer-content max-wrapper">
+        <div class="footer-section">
+          <p>Luxury & Elegance – One Bag at a Time.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: support@guccibag.com</p>
+          <p>Phone: +91 98765 43210</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 GUCCI BAG. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
